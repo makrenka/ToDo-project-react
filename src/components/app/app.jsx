@@ -28,6 +28,13 @@ export class App extends Component {
     }))
   }
 
+  addItem = (name, salary) => {
+    const newItem = { name, salary, id: this.maxId++ };
+    this.setState(({ data }) => ({
+      data: [...data, newItem],
+    }));
+  }
+
   render() {
     return (
       <div className="app">
@@ -42,7 +49,7 @@ export class App extends Component {
           data={this.state.data}
           onDelete={this.deleteItem}
         />
-        <EmployeesAddForm />
+        <EmployeesAddForm onAddItem={this.addItem} />
       </div>
     )
   }
