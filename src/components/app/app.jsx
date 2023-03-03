@@ -68,9 +68,8 @@ export class App extends Component {
 
   onToggleProp = (id, prop) => {
     this.setState(({ data }) => ({
-      data: data.map((item) => {
-        return item.id === id ? { ...item, [prop]: !item[prop] } : item;
-      }),
+      data: data.map((item) =>
+        item.id === id ? { ...item, [prop]: !item[prop] } : item),
     }));
   }
 
