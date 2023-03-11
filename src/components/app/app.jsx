@@ -14,9 +14,9 @@ export class App extends Component {
 
     this.state = {
       data: [
-        { name: "Alex M.", salary: 1000, id: 1, rise: false, increase: false, },
-        { name: "John S.", salary: 3000, id: 2, rise: false, increase: false, },
-        { name: "Michael K.", salary: 5000, id: 3, rise: false, increase: false, },
+        { name: "Alex M.", salary: 1000, id: 1, rise: false, increase: false, isEdditing: false },
+        { name: "John S.", salary: 3000, id: 2, rise: false, increase: false, isEdditing: false },
+        { name: "Michael K.", salary: 5000, id: 3, rise: false, increase: false, isEdditing: false },
       ],
       value: '',
       filter: 'all',
@@ -35,7 +35,14 @@ export class App extends Component {
     this.setState(({ data }) => ({
       data: [...data, newItem],
     }));
-  }
+  };
+
+  editItem = (id, name, salary) => {
+    this.setState(({ data }) => ({
+      data: data.map((item) =>
+        item.id === id ? { ...item, name, salary } : item),
+    }));
+  };
 
   // onToggleIncrease = (id) => {
   // длинный метод
@@ -118,6 +125,7 @@ export class App extends Component {
           data={this.filterItems(this.searchItems(data, value), filter)}
           onDelete={this.deleteItem}
           onToggleProp={this.onToggleProp}
+          editItem={this.editItem}
         />
         <EmployeesAddForm onAddItem={this.addItem} />
       </div>
