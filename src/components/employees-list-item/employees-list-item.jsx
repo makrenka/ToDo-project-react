@@ -7,16 +7,17 @@ export class EmployeesListItem extends Component {
     super(props);
 
     this.state = {
-      nameItem: '',
-      salaryItem: '',
+      nameItem: this.props.name,
+      salaryItem: this.props.salary,
     }
   }
 
   editItem = (e) => {
     e.preventDefault();
     const { nameItem, salaryItem } = this.state;
+    const { id } = this.props;
     if (nameItem !== '' && salaryItem !== '') {
-      this.props.editItem(nameItem, salaryItem);
+      this.props.editItem(id, nameItem, salaryItem);
     };
   };
 
@@ -49,7 +50,7 @@ export class EmployeesListItem extends Component {
               type="text"
               className="form-control new-post-label"
               placeholder={name}
-              name="name"
+              name="nameItem"
               value={nameItem}
               onChange={this.onValueChange}
             />
@@ -57,13 +58,21 @@ export class EmployeesListItem extends Component {
               type="number"
               className="form-control new-post-label"
               placeholder={salary}
-              name='salary'
+              name='salaryItem'
               value={salaryItem}
               onChange={this.onValueChange}
             />
 
-            <button type="submit" className="btn btn-outline-light">
-              Добавить
+            <button type="submit" className="btn btn-sm ">
+              <i className="fas fa-check"></i>
+            </button>
+            <button
+              type="button"
+              className="btn-trash btn-sm "
+              onClick={onToggleProp}
+              data-toggle="isEdditing"
+            >
+              <i className="fas fa-x"></i>
             </button>
           </form> :
           <>

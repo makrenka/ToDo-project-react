@@ -40,7 +40,7 @@ export class App extends Component {
   editItem = (id, name, salary) => {
     this.setState(({ data }) => ({
       data: data.map((item) =>
-        item.id === id ? { ...item, name, salary } : item),
+        item.id === id ? { ...item, name: name, salary: salary } : item),
     }));
   };
 
