@@ -5,3 +5,11 @@
   box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.15);
   color: #fff;
 }
+
+.search-error-message {
+  padding: 15px 25px;
+  line-height: 35px;
+  font-size: 20px;
+  cursor: pointer;
+  min-width: 550px;
+}
