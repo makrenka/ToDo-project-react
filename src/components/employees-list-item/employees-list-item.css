@@ -22,13 +22,16 @@
 }
 
 .list-group-item .form-control {
-  width: 230px;
+  width: 210px;
   height: 41px;
+  border: solid 1px #3d5a80;
+  margin-right: 24px;
 }
 
 .list-group-item .form-control:first-child {
   text-align: start;
-  min-width: 550px;
+  min-width: 520px;
+  margin-right: 48px;
 }
 
 .list-group-item button {
@@ -46,6 +49,10 @@
 
 .list-group-item .btn-trash {
   color: #e5383b;
+}
+
+.list-group-item .btn-pencil {
+  color: #3d5a80;
 }
 
 .list-group-item .btn {
