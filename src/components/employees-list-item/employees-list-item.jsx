@@ -15,9 +15,9 @@ export class EmployeesListItem extends Component {
   editItem = (e) => {
     e.preventDefault();
     const { nameItem, salaryItem } = this.state;
-    const { id } = this.props;
+    const { id, editItem } = this.props;
     if (nameItem !== '' && salaryItem !== '') {
-      this.props.editItem(id, nameItem, salaryItem);
+      editItem(id, nameItem, salaryItem);
     };
   };
 
@@ -49,7 +49,6 @@ export class EmployeesListItem extends Component {
             <input
               type="text"
               className="form-control new-post-label"
-              placeholder={name}
               name="nameItem"
               value={nameItem}
               onChange={this.onValueChange}
@@ -57,7 +56,6 @@ export class EmployeesListItem extends Component {
             <input
               type="number"
               className="form-control new-post-label"
-              placeholder={salary}
               name='salaryItem'
               value={salaryItem}
               onChange={this.onValueChange}
