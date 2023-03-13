@@ -21,6 +21,19 @@
   border: 0;
 }
 
+.list-group-item .form-control {
+  width: 210px;
+  height: 41px;
+  border: solid 1px #3d5a80;
+  margin-right: 24px;
+}
+
+.list-group-item .form-control:first-child {
+  text-align: start;
+  min-width: 520px;
+  margin-right: 48px;
+}
+
 .list-group-item button {
   width: 35px;
   height: 35px;
@@ -36,6 +49,16 @@
 
 .list-group-item .btn-trash {
   color: #e5383b;
+}
+
+.list-group-item .btn-pencil {
+  color: #3d5a80;
+}
+
+.list-group-item .btn {
+  background-color: #f0f0f0;
+  color: green;
+  border-radius: 0;
 }
 
 .list-group-item .fa-star {
@@ -62,4 +85,8 @@
 
 .list-group-item.increase .btn-star {
   color: #aeaeae;
+}
+
+.btn-check {
+  position: relative;
 }
